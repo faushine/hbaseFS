@@ -3,12 +3,18 @@ package com.faushine.hos.core.usermgr;
 import com.google.common.base.Strings;
 
 import com.faushine.hos.core.CoreUtil;
-import com.faushine.hos.core.usermgr.model.UserInfo;
+import com.faushine.hos.core.authmgr.IAuthService;
+import com.faushine.hos.core.authmgr.dao.TokenInfoMapper;
+import com.faushine.hos.core.authmgr.model.TokenInfo;
 import com.faushine.hos.core.usermgr.dao.UserInfoMapper;
+import com.faushine.hos.core.usermgr.model.UserInfo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Date;
 
 /**
  * @author Yuxin Fan
@@ -17,14 +23,27 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @Service("userServiceImpl")
 public class UserServiceImpl implements IUserService {
+  private long LONG_REFRESH_TIME = 4670409600000L;
+  private int LONG_EXPIRE_TIME = 36500;
 
   @Autowired
   UserInfoMapper userInfoMapper;
 
+  @Autowired
+  @Qualifier("authServiceImpl")
+  IAuthService authService;
+
   @Override
   public boolean addUser(UserInfo userInfo) {
     userInfoMapper.addUser(userInfo);
-    // todo:add token
+    TokenInfo tokenInfo = new TokenInfo();
+    tokenInfo.setToken(userInfo.getUserId());
+    tokenInfo.setActive(true);
+    tokenInfo.setExpireTime(LONG_EXPIRE_TIME);
+    tokenInfo.setRefreshTime(new Date(LONG_REFRESH_TIME));
+    tokenInfo.setCreator(CoreUtil.SYSTEM_USER);
+    tokenInfo.setCreateTime(new Date());
+    authService.addToken(tokenInfo);
     return true;
   }
 
@@ -39,7 +58,8 @@ public class UserServiceImpl implements IUserService {
   @Override
   public boolean deleteUser(String userId) {
     userInfoMapper.deleteUser(userId);
-    // todo: delete token and auth
+    authService.deleteToken(userId);
+    authService.deleteAuthByToken(userId);
     return true;
   }
 
@@ -55,6 +75,6 @@ public class UserServiceImpl implements IUserService {
 
   @Override
   public UserInfo getUserInfoByName(String userName) {
-    return null;
+    return userInfoMapper.getUserInfoByName(userName);
   }
 }

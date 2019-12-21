@@ -12,7 +12,7 @@
         <result column="CREATE_TIME" property="createTime"/>
     </resultMap>
     <insert id="addUser">
-        INSERT INFO USER_INFO
+        INSERT INTO USER_INFO
         (USER_ID,USER_NAME,PASSWORD,SYSTEM_ROLE,DETAIL,CREATE_TIME)
         VALUES
         (#{userInfo.userId},#{userInfo.userName},#{userInfo.password}

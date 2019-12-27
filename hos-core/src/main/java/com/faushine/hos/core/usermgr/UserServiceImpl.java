@@ -40,7 +40,8 @@ public class UserServiceImpl implements IUserService {
     tokenInfo.setToken(userInfo.getUserId());
     tokenInfo.setActive(true);
     tokenInfo.setExpireTime(LONG_EXPIRE_TIME);
-    tokenInfo.setRefreshTime(new Date(LONG_REFRESH_TIME));
+    Date date = new Date();
+    tokenInfo.setRefreshTime(date);
     tokenInfo.setCreator(CoreUtil.SYSTEM_USER);
     tokenInfo.setCreateTime(new Date());
     authService.addToken(tokenInfo);

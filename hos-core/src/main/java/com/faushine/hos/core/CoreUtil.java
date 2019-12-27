@@ -13,7 +13,7 @@ public class CoreUtil {
   public final static String SYSTEM_USER = "SuperAdmin";
 
   public static String getUUIDStr(){
-    return UUID.randomUUID().toString().replace("-","");
+    return UUID.randomUUID().toString().replace("-", "");
   }
 
   public static String getMd5Password(String str) {

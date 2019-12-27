@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>hos-common</artifactId>
+    <artifactId>hfs-common</artifactId>
 
     <properties>
         <main.basedir>${project.parent.basedir}</main.basedir>

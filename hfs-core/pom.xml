@@ -24,12 +24,12 @@
         </dependency>
         <dependency>
             <groupId>com.faushine.hbase</groupId>
-            <artifactId>hos-mybatis</artifactId>
+            <artifactId>hfs-mybatis</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.faushine.hbase</groupId>
-            <artifactId>hos-mybatis</artifactId>
+            <artifactId>hfs-mybatis</artifactId>
             <type>test-jar</type>
             <version>${project.version}</version>
             <scope>test</scope>

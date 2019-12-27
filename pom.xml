@@ -27,7 +27,6 @@
         <module>hfs-core</module>
         <module>hfs-server</module>
         <module>hfs-web</module>
-        <module>hfs-sdk</module>
         <module>hfs-common</module>
     </modules>
 

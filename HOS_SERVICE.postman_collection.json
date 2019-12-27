@@ -1,0 +1,658 @@
+{
+	"info": {
+		"_postman_id": "4460c2da-d173-2a31-81f6-0361079d4be8",
+		"name": "HOS_SERVICE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:9080/hos/v1/sys/user?userName=Alice&password=123456&role=USER&detail=this is a test user",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"hos",
+						"v1",
+						"sys",
+						"user"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "Alice"
+						},
+						{
+							"key": "password",
+							"value": "123456"
+						},
+						{
+							"key": "role",
+							"value": "USER"
+						},
+						{
+							"key": "detail",
+							"value": "this is a test user"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9080/loginPost?userName=Alice&password=123456",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"loginPost"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "Alice"
+						},
+						{
+							"key": "password",
+							"value": "123456"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "localhost:9080/loginPost?userName=SuperAdmin&password=superadmin",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9080/loginPost?userName=SuperAdmin&password=superadmin",
+							"host": [
+								"localhost"
+							],
+							"port": "9080",
+							"path": [
+								"loginPost"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "SuperAdmin"
+								},
+								{
+									"key": "password",
+									"value": "superadmin"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json;charset=UTF-8",
+							"name": "content-type",
+							"description": ""
+						},
+						{
+							"key": "date",
+							"value": "Thu, 26 Dec 2019 23:19:43 GMT",
+							"name": "date",
+							"description": ""
+						},
+						{
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"name": "transfer-encoding",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\"code\":200,\"data\":\"success\"}"
+				}
+			]
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9080/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9080/hos/v1/sys/user",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"hos",
+						"v1",
+						"sys",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:9080/hos/v1/sys/token?expireTime=7",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"hos",
+						"v1",
+						"sys",
+						"token"
+					],
+					"query": [
+						{
+							"key": "expireTime",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get token list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9080/hos/v1/sys/token/list",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"hos",
+						"v1",
+						"sys",
+						"token",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete token",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:9080/hos/v1/sys/token?token=ec3b6cc06c89471cbfad4a07717c61b0",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"hos",
+						"v1",
+						"sys",
+						"token"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "ec3b6cc06c89471cbfad4a07717c61b0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:9080/hos/v1/sys/token/refresh?token=5ea373e5eccd484996cd18b81c45930c",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"hos",
+						"v1",
+						"sys",
+						"token",
+						"refresh"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "5ea373e5eccd484996cd18b81c45930c"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create bucket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:9080/hos/v1/bucket?bucket=alicebucket&detail=this is a test bucket",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"hos",
+						"v1",
+						"bucket"
+					],
+					"query": [
+						{
+							"key": "bucket",
+							"value": "alicebucket"
+						},
+						{
+							"key": "detail",
+							"value": "this is a test bucket"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get bucket",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9080/hos/v1/bucket?bucket=jerrybucket",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"hos",
+						"v1",
+						"bucket"
+					],
+					"query": [
+						{
+							"key": "bucket",
+							"value": "jerrybucket"
+						},
+						{
+							"key": "detail",
+							"value": "this is a test bucket",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get bucket list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9080/hos/v1/bucket/list",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"hos",
+						"v1",
+						"bucket",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "content",
+							"type": "file",
+							"src": "/Users/faushine/Desktop/test.rtf"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:9080/hos/v1/object?bucket=alicebucket&key=/dir1/dir3/file2.rtf&mediaType=rtf",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"hos",
+						"v1",
+						"object"
+					],
+					"query": [
+						{
+							"key": "bucket",
+							"value": "alicebucket"
+						},
+						{
+							"key": "key",
+							"value": "/dir1/dir3/file2.rtf"
+						},
+						{
+							"key": "mediaType",
+							"value": "rtf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload folder",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:9080/hos/v1/object?bucket=alicebucket&key=/dir1/dir2/",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"hos",
+						"v1",
+						"object"
+					],
+					"query": [
+						{
+							"key": "bucket",
+							"value": "alicebucket"
+						},
+						{
+							"key": "key",
+							"value": "/dir1/dir2/"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:9080/hos/v1/sys/user?userId=61c52efe0b524887a1dff9932078938f",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"hos",
+						"v1",
+						"sys",
+						"user"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "61c52efe0b524887a1dff9932078938f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list dir",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9080/hos/v1/object/list/dir?bucket=alicebucket&dir=/dir1/dir2/",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"hos",
+						"v1",
+						"object",
+						"list",
+						"dir"
+					],
+					"query": [
+						{
+							"key": "bucket",
+							"value": "alicebucket"
+						},
+						{
+							"key": "dir",
+							"value": "/dir1/dir2/"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete bucket",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:9080/hos/v1/bucket?bucket=alicebucket",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"hos",
+						"v1",
+						"bucket"
+					],
+					"query": [
+						{
+							"key": "bucket",
+							"value": "alicebucket"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete file",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:9080/hos/v1/object?bucket=alicebucket&key=/dir1/dir2/file1.rtf",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"hos",
+						"v1",
+						"object"
+					],
+					"query": [
+						{
+							"key": "bucket",
+							"value": "alicebucket"
+						},
+						{
+							"key": "key",
+							"value": "/dir1/dir2/file1.rtf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get file info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9080/hos/v1/object/info?bucket=alicebucket&key=/dir1/dir2/file1.rtf",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"hos",
+						"v1",
+						"object",
+						"info"
+					],
+					"query": [
+						{
+							"key": "bucket",
+							"value": "alicebucket"
+						},
+						{
+							"key": "key",
+							"value": "/dir1/dir2/file1.rtf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list objects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9080/hos/v1/object/list?bucket=alicebucket&startKey=/dir1/dir2/file3.rtf",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"hos",
+						"v1",
+						"object",
+						"list"
+					],
+					"query": [
+						{
+							"key": "bucket",
+							"value": "alicebucket"
+						},
+						{
+							"key": "startKey",
+							"value": "/dir1/dir2/file3.rtf"
+						},
+						{
+							"key": "endKey",
+							"value": "/dir1/dir3/",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "download file",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9080/hos/v1/object/content?bucket=alicebucket&key=/dir1/dir2/file3.rtf",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"hos",
+						"v1",
+						"object",
+						"content"
+					],
+					"query": [
+						{
+							"key": "bucket",
+							"value": "alicebucket"
+						},
+						{
+							"key": "key",
+							"value": "/dir1/dir2/file3.rtf"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

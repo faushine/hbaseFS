@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "4460c2da-d173-2a31-81f6-0361079d4be8",
-		"name": "HOS_SERVICE",
+		"name": "hbaseFS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -652,6 +652,28 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "2b1b11bf-811d-4cb3-831b-8e51ddb6bbcc",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "13d21448-c740-4013-8154-1a32a7e478a4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	],
 	"protocolProfileBehavior": {}

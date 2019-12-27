@@ -3,7 +3,7 @@ hbaseFS is a distributed file system using HBase[https://hbase.apache.org/] whic
 
 ## Description
 
-hbaseFS is an basic distributed storage system implemented in Java with springboot. The main features of hbaseFS are:
+hbaseFS is a basic distributed storage system implemented in Java with springboot. The main features of hbaseFS are:
 
 - Providing user identity management and resource authentication. 
 - Supporting basic file operations.

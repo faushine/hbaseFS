@@ -19,5 +19,5 @@ hbaseFS is a basic distributed storage system implemented in Java with springboo
 ## Future Directions
 
 - Fault-tolerance
-- Asyn I/O
+- Message queue
 - Encrypting files

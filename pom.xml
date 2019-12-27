@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.faushine.hbase</groupId>
-    <artifactId>distributed-hos-service</artifactId>
+    <artifactId>hbaseFS</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
@@ -23,12 +23,12 @@
         </plugins>
     </build>
     <modules>
-        <module>hos-mybatis</module>
-        <module>hos-core</module>
-        <module>hos-server</module>
-        <module>hos-web</module>
-        <module>hos-sdk</module>
-        <module>hos-common</module>
+        <module>hfs-mybatis</module>
+        <module>hfs-core</module>
+        <module>hfs-server</module>
+        <module>hfs-web</module>
+        <module>hfs-sdk</module>
+        <module>hfs-common</module>
     </modules>
 
 </project>

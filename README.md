@@ -1,6 +1,6 @@
 # hbaseFS
 
-hbaseFS is a distributed system that provides a small amount of highly replicated, consistent storage by using [HBase](hbaseFS.sqlhttps://hbase.apache.org/) which is an open-source, distributed, versioned, non-relational database on top of Hadoop and HDFS. 
+hbaseFS is a distributed file system that provides a small amount of highly replicated, consistent storage by using [HBase](hbaseFS.sqlhttps://hbase.apache.org/) which is an open-source, distributed, versioned, non-relational database on top of Hadoop and HDFS. 
 
 Overview
 ========

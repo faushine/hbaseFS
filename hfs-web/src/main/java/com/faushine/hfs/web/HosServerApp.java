@@ -25,7 +25,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * @create 2019-12-24
  */
 @EnableWebMvc
-@SuppressWarnings("deprecation")
+//@SuppressWarnings("deprecation")
 @EnableAutoConfiguration(exclude = MongoAutoConfiguration.class)
 @Configuration
 @ComponentScan({"com.faushine.*"})
@@ -41,7 +41,7 @@ public class HosServerApp {
   private SecurityInterceptor securityInterceptor;
 
   public static void main(String[] args) {
-    SpringApplication.run(HosServerApp.class);
+    SpringApplication.run(HosServerApp.class,args);
   }
   @Bean
   public WebMvcConfigurer configurer(){

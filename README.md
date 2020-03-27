@@ -61,6 +61,6 @@ hbaseFS.postman_collection.json
 ```
 
 ## Future Directions
-
+- Support breakpoint retransmission
 - Add messaging queue for current limiting
 - Encrypting files
